@@ -114,7 +114,7 @@
                 <configuration>
                     <url>http://localhost:8080/manager/text</url>
                     <server>tomcat</server>
-                    <path>/javabank4</path>
+                    <path>/teamnull</path>
                 </configuration>
             </plugin>
 
