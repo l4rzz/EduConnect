@@ -1,10 +1,6 @@
 package nl.codeforall.teamnull.services;
 
-import nl.codeforall.teamnull.persistence.dao.jpa.SchoolJpaDao;
-import nl.codeforall.teamnull.persistence.dao.jpa.TeacherJpaDao;
 import nl.codeforall.teamnull.persistence.model.Teacher;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
