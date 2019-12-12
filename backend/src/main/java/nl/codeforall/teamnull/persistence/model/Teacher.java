@@ -1,12 +1,7 @@
 package nl.codeforall.teamnull.persistence.model;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -17,7 +12,10 @@ public class Teacher extends Model {
 
     private String subject;
     private String biography;
-    private List<String> preferredCountries;
+
+    @Column
+    @ElementCollection(targetClass = String.class)
+    private List<String> preferredCountries = new ArrayList<>();
 
     @ManyToOne
     private School school;

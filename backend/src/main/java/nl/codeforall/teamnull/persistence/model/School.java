@@ -3,6 +3,7 @@ package nl.codeforall.teamnull.persistence.model;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -13,14 +14,18 @@ public class School extends Model {
 
     private String city;
     private String country;
-    private List<String> subjects;
+
+    @Column
+    @ElementCollection(targetClass = String.class)
+    private List<String> subjects = new ArrayList<>();
 
     @OneToMany(
+
             cascade = CascadeType.ALL,
-            mappedBy = "schools",
+            mappedBy = "school",
             fetch = FetchType.EAGER
     )
-    private List<Teacher> teachers;
+    private List<Teacher> teachers = new ArrayList<>();
 
     private Date startDate;
     private Date endDate;

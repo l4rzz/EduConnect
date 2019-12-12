@@ -1,0 +1,8 @@
+nl/codeforall/teamnull/persistence/dao/Dao.class
+nl/codeforall/teamnull/persistence/model/Model.class
+nl/codeforall/teamnull/persistence/model/School.class
+nl/codeforall/teamnull/persistence/dao/jpa/SchoolJpaDao.class
+nl/codeforall/teamnull/services/TeacherService.class
+nl/codeforall/teamnull/persistence/model/Teacher.class
+nl/codeforall/teamnull/persistence/dao/jpa/TeacherJpaDao.class
+nl/codeforall/teamnull/persistence/dao/jpa/GenericJpaDao.class
