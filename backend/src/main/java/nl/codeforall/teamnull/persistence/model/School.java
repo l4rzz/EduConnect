@@ -24,7 +24,6 @@ public class School extends Model {
 
     @OneToMany(
             cascade = CascadeType.ALL,
-            orphanRemoval = false,
             mappedBy = "schools",
             fetch = FetchType.EAGER
     )
