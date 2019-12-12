@@ -10,16 +10,9 @@ import java.util.List;
 @Table(name = "schools")
 public class School extends Model {
 
-    @NotNull
-    @NotBlank
+
     private String city;
-
-    @NotNull
-    @NotBlank
     private String country;
-
-    @NotNull
-    @NotBlank
     private List<String> subjects;
 
     @OneToMany(
@@ -30,12 +23,7 @@ public class School extends Model {
     )
     private List<Teacher> teachers;
 
-    @NotNull
-    @NotBlank
     private Date startDate;
-
-    @NotNull
-    @NotBlank
     private Date endDate;
 
     public String getCity() {
