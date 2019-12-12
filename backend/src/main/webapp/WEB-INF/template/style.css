@@ -1,0 +1,18 @@
+.content {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.card {
+    width: 18rem;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+#profile-details {
+    padding: 2%;
+}
