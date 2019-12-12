@@ -1,0 +1,27 @@
+body{
+    margin: 0 200px;
+    background-color: antiquewhite;
+}
+.nav{
+    height: 10vh;
+}
+.jumbotron{
+    background-color: lemonchiffon;
+    height: 60vh;
+}
+.banner{
+    height: 30vh;
+}
+.banner img{
+    max-height: 25vh;
+}
+.about-us{
+  height: 95vh;
+  background-color: lemonchiffon;
+}
+.about-div{
+    margin: 100px 200px;
+}
+.footer{
+   background-color: grey; 
+}
