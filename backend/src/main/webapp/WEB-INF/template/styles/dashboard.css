@@ -1,0 +1,22 @@
+body{
+    margin: 0 5vh;
+    background-color: antiquewhite;
+}
+.dashboard{
+    min-height: 90vh;
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.dashboard-profile-image{
+    border-radius: 50%;
+
+}
+.dashboard-wall{
+    margin-left: 5vw;
+}
+.footer{
+    background-color: bisque;
+}
