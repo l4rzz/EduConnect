@@ -1,8 +1,13 @@
-/Users/codecadet/Desktop/hackathon/team-null/backend/src/main/java/nl/codeforall/teamnull/persistence/model/Model.java
-/Users/codecadet/Desktop/hackathon/team-null/backend/src/main/java/nl/codeforall/teamnull/persistence/dao/Dao.java
+/Users/codecadet/Desktop/hackathon/team-null/backend/src/main/java/nl/codeforall/teamnull/controller/rest/RestTeacherController.java
 /Users/codecadet/Desktop/hackathon/team-null/backend/src/main/java/nl/codeforall/teamnull/persistence/dao/jpa/SchoolJpaDao.java
+/Users/codecadet/Desktop/hackathon/team-null/backend/src/main/java/nl/codeforall/teamnull/services/GenericService.java
+/Users/codecadet/Desktop/hackathon/team-null/backend/src/main/java/nl/codeforall/teamnull/persistence/dao/jpa/GenericJpaDao.java
+/Users/codecadet/Desktop/hackathon/team-null/backend/src/main/java/nl/codeforall/teamnull/services/AbstractService.java
+/Users/codecadet/Desktop/hackathon/team-null/backend/src/main/java/nl/codeforall/teamnull/persistence/model/Model.java
+/Users/codecadet/Desktop/hackathon/team-null/backend/src/main/java/nl/codeforall/teamnull/services/SchoolService.java
+/Users/codecadet/Desktop/hackathon/team-null/backend/src/main/java/nl/codeforall/teamnull/persistence/dao/Dao.java
+/Users/codecadet/Desktop/hackathon/team-null/backend/src/main/java/nl/codeforall/teamnull/controller/rest/RestSchoolController.java
 /Users/codecadet/Desktop/hackathon/team-null/backend/src/main/java/nl/codeforall/teamnull/persistence/dao/jpa/TeacherJpaDao.java
 /Users/codecadet/Desktop/hackathon/team-null/backend/src/main/java/nl/codeforall/teamnull/persistence/model/School.java
 /Users/codecadet/Desktop/hackathon/team-null/backend/src/main/java/nl/codeforall/teamnull/services/TeacherService.java
-/Users/codecadet/Desktop/hackathon/team-null/backend/src/main/java/nl/codeforall/teamnull/persistence/dao/jpa/GenericJpaDao.java
 /Users/codecadet/Desktop/hackathon/team-null/backend/src/main/java/nl/codeforall/teamnull/persistence/model/Teacher.java

@@ -14,7 +14,8 @@ public class Teacher extends Model {
     private String biography;
 
     @Column
-    @ElementCollection(targetClass = String.class)
+    @ElementCollection(targetClass = String.class ,fetch = FetchType.EAGER)
+
     private List<String> preferredCountries = new ArrayList<>();
 
     @ManyToOne
