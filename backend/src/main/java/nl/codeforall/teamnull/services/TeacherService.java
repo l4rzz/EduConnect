@@ -11,32 +11,22 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-public class TeacherService {
-
-    private TeacherJpaDao teacherDao;
-    private SchoolJpaDao schoolDao;
-
-    @Autowired
-    public void setTeacherDao(TeacherJpaDao teacherDao) {
-        this.teacherDao = teacherDao;
-    }
-
-    @Autowired
-    public void setSchoolDao(SchoolJpaDao schoolDao) {
-        this.schoolDao = schoolDao;
-    }
+public class TeacherService extends AbstractService implements GenericService<Teacher> {
 
     @Transactional
+    @Override
     public Teacher save(Teacher teacher) {
         return teacherDao.saveOrUpdate(teacher);
     }
 
     @Transactional
+    @Override
     public void delete(Integer id) {
         teacherDao.delete(id);
     }
 
     @Transactional
+    @Override
     public List<Teacher> list() {
         return teacherDao.findAll();
     }
