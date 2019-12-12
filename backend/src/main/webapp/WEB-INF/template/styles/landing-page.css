@@ -1,12 +1,26 @@
+:root {
+    --main-bg-color: #151965;
+    --secondary-bg-color: #151965;
+    --tertiary-bg-color: #515585;
+    --extra-bg-color: #46b5d1;
+  }
+  *{
+      color: azure;
+  }
+  
 body{
     margin: 0 200px;
-    background-color: antiquewhite;
+    background-color: var(--main-bg-color);
 }
 .nav{
-    height: 10vh;
+    height: 5vh;
+
+}
+.logo{
+    color: var(--main-bg-color);
 }
 .jumbotron{
-    background-color: lemonchiffon;
+    background-color: var(--tertiary-bg-color);
     height: 60vh;
 }
 .banner{
@@ -17,11 +31,18 @@ body{
 }
 .about-us{
   height: 95vh;
-  background-color: lemonchiffon;
+  background-color: var(--tertiary-bg-color);
+  display: flex;
+  justify-content: space-around;
 }
 .about-div{
     margin: 100px 200px;
 }
-.footer{
-   background-color: grey; 
+.footer *{
+    color: var(--main-bg-color);
+
+}
+.footerSection{
+    display: flex;
+    justify-content: space-around;
 }
