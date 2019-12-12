@@ -5,7 +5,7 @@ import nl.codeforall.teamnull.persistence.dao.jpa.TeacherJpaDao;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
-public class AbstractService {
+public abstract class AbstractService {
 
     protected TeacherJpaDao teacherDao;
     protected SchoolJpaDao schoolDao;
