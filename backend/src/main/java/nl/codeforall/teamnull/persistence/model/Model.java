@@ -13,7 +13,7 @@ public abstract class Model {
 
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Version
     private Integer version;
@@ -36,11 +36,11 @@ public abstract class Model {
     @NotBlank
     private String imageLink;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
