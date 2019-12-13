@@ -88,7 +88,7 @@ public class RestSchoolController {
     )
     public ResponseEntity<?> matchWithTeachers(@PathVariable Integer id) {
 
-        return new ResponseEntity<>(service.m)
+        return new ResponseEntity<>(service.match(id), HttpStatus.OK);
     }
 
 

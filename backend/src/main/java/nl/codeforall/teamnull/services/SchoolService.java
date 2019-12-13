@@ -42,7 +42,7 @@ public class SchoolService extends AbstractService implements GenericService<Sch
         School school = schoolDao.findById(id);
         List<Teacher> availableTeachers = new ArrayList<>();
         for (Teacher teacher : teacherDao.findAll()) {
-            if (school.getEndDate() == teacher.getEndDate() || school.getStartDate() == teacher.getStartDate()) {
+            if (school.getEndDate().before(teacher.getEndDate()) || school.getStartDate().after(teacher.getStartDate()) || school.getStartDate() == teacher.getStartDate() || school.getEndDate() == teacher.getEndDate()) {
                 availableTeachers.add(teacher);
             }
         }
