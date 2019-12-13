@@ -25,6 +25,7 @@ public class TeacherConverter {
         Teacher teacher = (teacherDto.getId() != null ? teacherService.get(teacherDto.getId()) : new Teacher());
 
         teacher.setName(teacherDto.getName());
+        teacher.setId(teacherDto.getId());
         teacher.setEmail(teacherDto.getEmail());
         teacher.setBiography(teacherDto.getBiography());
         teacher.setCity(teacherDto.getCity());
@@ -43,6 +44,7 @@ public class TeacherConverter {
         TeacherDto teacherDto = new TeacherDto();
 
         teacherDto.setName(teacher.getName());
+        teacherDto.setId(teacher.getId());
         teacherDto.setEmail(teacher.getEmail());
         teacherDto.setBiography(teacher.getBiography());
         teacherDto.setCity(teacher.getCity());

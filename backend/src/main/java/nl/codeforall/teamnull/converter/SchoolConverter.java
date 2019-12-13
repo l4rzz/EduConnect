@@ -22,6 +22,7 @@ public class SchoolConverter {
         School school = (schoolDto.getId() != null ? service.get(schoolDto.getId()) : new School());
 
         school.setName(schoolDto.getName());
+        school.setId(schoolDto.getId());
         school.setEmail(schoolDto.getEmail());
         school.setImageLink(schoolDto.getImageLink());
         school.setCity(schoolDto.getCity());
@@ -39,6 +40,7 @@ public class SchoolConverter {
         SchoolDto schoolDto = new SchoolDto();
 
         schoolDto.setName(school.getName());
+        schoolDto.setId(school.getId());
         schoolDto.setEmail(school.getEmail());
         schoolDto.setImageLink(school.getImageLink());
         schoolDto.setCity(school.getCity());

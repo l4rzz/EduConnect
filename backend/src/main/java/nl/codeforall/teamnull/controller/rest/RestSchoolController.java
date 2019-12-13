@@ -84,7 +84,7 @@ public class RestSchoolController {
     }
 
     @GetMapping(
-            value = "{/id}/match}",
+            value = "/{id}/match",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public ResponseEntity<?> matchWithTeachers(@PathVariable Integer id) {
