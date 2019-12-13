@@ -1,5 +1,8 @@
 package nl.codeforall.teamnull.controller.rest;
 
+import nl.codeforall.teamnull.command.SchoolDto;
+import nl.codeforall.teamnull.command.TeacherDto;
+import nl.codeforall.teamnull.converter.TeacherConverter;
 import nl.codeforall.teamnull.persistence.model.School;
 import nl.codeforall.teamnull.persistence.model.Teacher;
 import nl.codeforall.teamnull.services.GenericService;
@@ -7,13 +10,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import javax.validation.Valid;
+import java.util.LinkedList;
 import java.util.List;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -22,13 +25,8 @@ import java.util.List;
 public class RestTeacherController {
 
     private GenericService<Teacher, School> teacherService;
-    private GenericService<School, Teacher> schoolService;
 
-    @Autowired
-    @Qualifier("schoolService")
-    public void setSchoolService(GenericService<School, Teacher> schoolService) {
-        this.schoolService = schoolService;
-    }
+    private TeacherConverter converter;
 
     @Autowired
     @Qualifier("teacherService")
@@ -36,18 +34,37 @@ public class RestTeacherController {
         this.teacherService = teacherService;
     }
 
-
-    @RequestMapping(method = RequestMethod.GET, path = {"/", ""})
-    public List<Teacher> listTeachers(){
-        List<Teacher> result = teacherService.list();
-
-        return result;
+    @Autowired
+    public void setConverter(TeacherConverter converter) {
+        this.converter = converter;
     }
 
-    @RequestMapping(method = RequestMethod.POST, path = {"/", ""})
-    public ResponseEntity<?> addTeacher(@RequestBody Teacher teacher, UriComponentsBuilder uriComponentsBuilder) {
+    @GetMapping(path = {"/", ""})
+    public ResponseEntity<List<TeacherDto>> listTeachers() {
+        List<TeacherDto> teacherDtos = new LinkedList<>();
+        for (Teacher teacher : teacherService.list()) {
+            teacherDtos.add(converter.teacherToDto(teacher));
+        }
 
-        Teacher savedTeacher = teacherService.save(teacher);
+        return new ResponseEntity<>(teacherDtos, HttpStatus.OK);
+    }
+
+    @GetMapping(path = "/{id}")
+    public ResponseEntity<TeacherDto> listTeacher (@PathVariable Integer id) {
+
+        Teacher teacher = teacherService.list().get(id);
+
+        return new ResponseEntity<>(converter.teacherToDto(teacher), HttpStatus.OK);
+
+    }
+
+    @PostMapping(
+            path = "/add",
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public ResponseEntity<?> addTeacher(@RequestBody TeacherDto teacherDto, UriComponentsBuilder uriComponentsBuilder) {
+
+        Teacher savedTeacher = teacherService.save(converter.dtoToTeacher(teacherDto));
 
         UriComponents uriComponents = uriComponentsBuilder.path("/api/teacher/" + savedTeacher.getId()).build();
 
@@ -56,5 +73,35 @@ public class RestTeacherController {
         return new ResponseEntity<>(headers, HttpStatus.CREATED);
     }
 
+    @GetMapping(
+            path = "/{id}/match",
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public ResponseEntity<?> matchWithSchools(@PathVariable Integer id) {
 
+        return new ResponseEntity<>(teacherService.match(id), HttpStatus.OK);
+    }
+
+    @DeleteMapping(
+            path = "/{id}/remove",
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public ResponseEntity<?> removeTeacher(@PathVariable Integer id) {
+
+        teacherService.delete(id);
+
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @PutMapping(
+            path = "/{id}/update",
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public ResponseEntity<?> updateTeacher (@PathVariable Integer id, TeacherDto teacherDto) {
+        if (teacherDto.getId().equals(id)) {
+            teacherService.save(converter.dtoToTeacher(teacherDto));
+            return new ResponseEntity<>(HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+    }
 }
