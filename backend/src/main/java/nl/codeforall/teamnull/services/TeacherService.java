@@ -27,5 +27,8 @@ public class TeacherService extends AbstractService implements GenericService<Te
         return teacherDao.findAll();
     }
 
-
+    @Override
+    public Teacher get(Integer id) {
+        return teacherDao.findById(id);
+    }
 }
