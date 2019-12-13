@@ -10,7 +10,7 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
         $(function() {
-            $("#datepicker").datepicker();
+            $(".datepicker").datepicker();
         });
     </script>
 </head>
@@ -20,12 +20,13 @@
 
     <div class="form-group">
         <label for="datepicker-startdate">Date Start Date</label>
-        <input type="text" id="datepicker-startdate">
+        <input type="text" class="datepicker">
     </div>
 
     <div class="form-group">
         <label for="datepicker-enddate">Date Start Date</label>
-        <input type="text" id="datepicker-enddate">
+        <input type="text" class="datepicker">
+        <input type="button" id="save" value="Save" />
     </div>
 </body>
 

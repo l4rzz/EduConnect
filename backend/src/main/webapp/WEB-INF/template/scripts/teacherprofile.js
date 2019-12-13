@@ -12,8 +12,13 @@ $(document).ready(function() {
             url: 'http://localhost:8080/api/user',
             type: 'POST',
             data: JSON.stringify({
-                username: username,
-                password: password
+                name: name,
+                email: email,
+                city: city,
+                country: country,
+                preferredcountry: preferredcountry,
+                bio: bio,
+                subject: subject
             }),
             async: true,
             contentType: 'application/json',
