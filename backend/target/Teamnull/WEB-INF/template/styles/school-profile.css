@@ -1,0 +1,38 @@
+:root {
+    --main-bg-color: #151965;
+    --secondary-bg-color: #151965;
+    --tertiary-bg-color: #515585;
+    --extra-bg-color: #46b5d1;
+  }
+  *{
+      color: azure;
+  }
+  body{
+    margin: 0 200px;
+    background-color: var(--main-bg-color);
+}
+.profile-box{
+    height: 90vh;
+    display: flex;
+    align-content: center;
+}
+
+#profile-details {
+    padding: 2%;
+    background-color: var(--extra-bg-color);
+    display: flex;
+    justify-content: space-around;
+}
+
+#school-profile{
+    margin-top: 100px;
+    display: flex;
+}
+.profile-picture{
+    width: 400px;
+    height: auto;
+    
+}
+.about-me{
+    margin-top: 30px;
+}
