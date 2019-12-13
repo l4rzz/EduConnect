@@ -29,11 +29,13 @@ public class TeacherService extends AbstractService implements GenericService<Te
         return teacherDao.findAll();
     }
 
+    @Transactional
     @Override
     public Teacher get(Integer id) {
         return teacherDao.findById(id);
     }
 
+    @Transactional
     @Override
     public List<School> match(Integer id) {
 
