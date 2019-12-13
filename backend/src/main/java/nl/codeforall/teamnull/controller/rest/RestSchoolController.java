@@ -6,14 +6,12 @@ import nl.codeforall.teamnull.converter.SchoolConverter;
 import nl.codeforall.teamnull.persistence.model.School;
 import nl.codeforall.teamnull.persistence.model.Teacher;
 import nl.codeforall.teamnull.services.GenericService;
-import nl.codeforall.teamnull.services.SchoolService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -90,6 +88,29 @@ public class RestSchoolController {
     public ResponseEntity<?> matchWithTeachers(@PathVariable Integer id) {
 
         return new ResponseEntity<>(service.match(id), HttpStatus.OK);
+    }
+
+    @DeleteMapping(
+            value = "/{id}/remove",
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public ResponseEntity removeSchool(@PathVariable Integer id) {
+
+        service.delete(id);
+
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @PutMapping(
+            value = "/{id}/update",
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public ResponseEntity<?> updateSchool(@PathVariable Integer id, SchoolDto schoolDto) {
+        if (schoolDto.getId().equals(id)) {
+            service.save(converter.dtoToSchool(schoolDto));
+            return new ResponseEntity<>(HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 
 
