@@ -30,6 +30,7 @@ public class TeacherConverter {
         teacher.setBiography(teacherDto.getBiography());
         teacher.setCity(teacherDto.getCity());
         teacher.setCountry(teacherDto.getCountry());
+        teacher.setImageLink(teacherDto.getImageLink());
         teacher.setPreferredCountries(teacherDto.getPreferredCountries());
         teacher.setSubject(teacherDto.getSubject());
         teacher.setStartDate(teacherDto.getStartDate());
@@ -48,6 +49,7 @@ public class TeacherConverter {
         teacherDto.setEmail(teacher.getEmail());
         teacherDto.setBiography(teacher.getBiography());
         teacherDto.setCity(teacher.getCity());
+        teacherDto.setImageLink(teacher.getImageLink());
         teacherDto.setCountry(teacher.getCountry());
         teacherDto.setPreferredCountries(teacher.getPreferredCountries());
         teacherDto.setSubject(teacher.getSubject());
