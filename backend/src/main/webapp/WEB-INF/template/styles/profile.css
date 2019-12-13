@@ -1,15 +1,18 @@
 .content {
-    width: 60%;
-    margin: 0 auto;
+    width: 80%;
+    height: 100vh;
+    margin: 2% auto;
+    overflow: hidden;
 }
 
-.card {
-    width: 18rem;
+#bio {
+    height: 90vh;
+    width: 80%;
 }
 
 .profile-picture {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
 }
 
