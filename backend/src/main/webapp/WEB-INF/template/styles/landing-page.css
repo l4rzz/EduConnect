@@ -23,6 +23,13 @@ body{
     background-color: var(--tertiary-bg-color);
     height: 60vh;
 }
+.buttons{
+    border-left: 2px solid white;
+    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .banner{
     height: 30vh;
 }
