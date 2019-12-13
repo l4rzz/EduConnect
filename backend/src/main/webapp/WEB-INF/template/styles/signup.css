@@ -1,3 +1,4 @@
+
 :root {
     --main-bg-color: #151965;
     --secondary-bg-color: #151965;
@@ -19,31 +20,8 @@ body{
 .logo{
     color: var(--main-bg-color);
 }
-.jumbotron{
-    background-color: var(--tertiary-bg-color);
-    height: 60vh;
-}
-.buttons{
-    border-left: 2px solid white;
-    padding-left: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.banner{
-    height: 30vh;
-}
-.banner img{
-    max-height: 25vh;
-}
-.about-us{
-  height: 95vh;
-  background-color: var(--tertiary-bg-color);
-  display: flex;
-  justify-content: space-around;
-}
-.about-div{
-    margin: 100px 200px;
+.form-group label{
+    color: var(--main-bg-color);
 }
 .footer *{
     color: var(--main-bg-color);
