@@ -27,6 +27,7 @@
 #teacher-profile{
     margin-top: 100px;
     display: flex;
+    justify-content: center;
 }
 .profile-picture{
     height: auto;
