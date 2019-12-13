@@ -37,6 +37,9 @@ public class TeacherDto {
     @NotNull(message = "Give at least one country")
     private List<String> preferredCountries;
 
+    @NotBlank
+    @NotNull
+    private String imageLink;
 
     @NotBlank(message = "Biography is mandatory")
     @NotNull(message = "Biography is mandatory")
@@ -56,6 +59,14 @@ public class TeacherDto {
     @NotBlank(message = "Please give an end date")
     @NotNull(message = "Please give an end date")
     private Date endDate;
+
+    public String getImageLink() {
+        return imageLink;
+    }
+
+    public void setImageLink(String imageLink) {
+        this.imageLink = imageLink;
+    }
 
     public String getSubject() {
         return subject;

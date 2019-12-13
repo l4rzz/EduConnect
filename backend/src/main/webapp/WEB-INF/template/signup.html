@@ -1,130 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
 
-    <link rel="stylesheet" href="styles/bootstrap.min.css">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="styles/signup.css">
-    
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="styles/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <link rel="stylesheet" href="styles/signup.css" />
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>˜
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="scripts/signup-tab.js"></script>
     <script src="scripts/signup.js"></script>
+  </head>
 
-
-</head>
-
-<body>
+  <body>
     <div class="container">
-            <section>
-                    <nav class="navbar navbar-light bg-light">
-                        <span class="mb-0 h1 logo">ANGELS</span>
-                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/1122px-Wikipedia-logo-v2.svg.png" alt="header logo" height="70px" class="header-image">
-                    </nav>
-                </section>
-            <section>
+      <section>
+        <nav class="navbar navbar-light bg-light">
+          <span class="mb-0 h1 logo">ANGELS</span>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/1122px-Wikipedia-logo-v2.svg.png"
+            alt="header logo"
+            height="70px"
+            class="header-image"
+          />
+        </nav>
+      </section>
+      <section>
         <div id="tabs">
-            <ul>
-                <li><a href="#signup-teacher">Signup as a teacher!</a></li>
-                <li><a href="#signup-school">Signup as a school</a></li>
-            </ul>
-            <div id="signup-teacher">
-                <h2 class="h2">Signup AS Teacher</h2>
-                <div class="form-group ">
-                    <label for="username ">Username:</label>
-                    <input type="text " class="form-control form-control-sm" id=" username-teacher " placeholder="please fill in username " required />
-                </div>
+          <ul>
+            <li><a href="#signup-teacher">Signup as a teacher</a></li>
+            <li><a href="#signup-school">Signup as a school</a></li>
+            <button class="btn btn-info home">
+              <a href="landing-page.html">HOME</a>
+            </button>
+          </ul>
 
-                <div class="form-group ">
-                    <label for="password ">Password:</label>
-                    <input type="password " class="form-control form-control-sm" id=" password-teacher " placeholder="please fill in password " required />
-                </div>
+          <div id="signup-teacher">
+            <form id="form" action="http://localhost:8080/teamnull/api/teacher" method="post">
+              <h2 class="h2">Signup AS Teacher</h2>
+              
+              <div class="form-group ">
+                <label for="email ">Email:</label>
+                <input
+                  type="email"
+                  class="form-control form-control-sm"
+                  id="email-teacher"
+                  name="email"
+                  placeholder="please fill in email "
+                  required
+                />
+              </div>
 
-                <div class="form-group ">
-                    <label for="email ">Email:</label>
-                    <input type="email " class="form-control form-control-sm" id="email-teacher" placeholder="please fill in email " required />
-                </div>
+              <div class="form-group ">
+                <label for="name ">Name:</label>
+                <input
+                  type="text "
+                  class="form-control form-control-sm"
+                  id="name-teacher"
+                  name="name"
+                  placeholder="please fill in full name "
+                  required
+                />
+              </div>
 
-                <div class="form-group ">
-                    <label for="name ">Name:</label>
-                    <input type="text " class="form-control form-control-sm" id=" name-teacher " placeholder="please fill in full name " required />
-                </div>
+              <div class="form-group ">
+                <label for="subject">Subject:</label>
+                <input
+                  type="text"
+                  class="form-control form-control-sm"
+                  id="subject-teacher"
+                  name="subject"
+                  placeholder="please fill in subject "
+                  required
+                />
+              </div>
 
-                <div class="form-group ">
-                    <label for="subject ">Subject:</label>
-                    <input type="text " class="form-control form-control-sm" id=" subject-teacher " placeholder="please fill in subject " required />
-                </div>
+              <div class="form-group">
+                    <label for="image">Image Link:</label>
+                    <input
+                      type="url"
+                      class="form-control form-control-sm"
+                      id="imageLink-teacher"
+                      name="image-link"
+                      placeholder="please give image URL"
+                      required
+                    />
+                  </div>
 
-                <div class="form-group">
-                    <button class="btn btn-success" type="button" id="signup-teacher">Signup</button>
-                </div>
+              <div class="form-group">
+                    <input id="submit-teacher" type="button" name="submit" value="submit"/>
+              </div>
+            </form>
+          </div>
+          <div id="signup-school">
+            <h2 class="h2">Signup As School</h2>
+
+            <div class="form-group ">
+              <label for="email ">Email:</label>
+              <input
+                type="email "
+                class="form-control form-control-sm "
+                id=" email-school "
+                placeholder="please fill in email "
+                required
+              />
             </div>
-            <div id="signup-school">
-                <h2 class="h2">Signup As School</h2>
 
-                <div class="form-group ">
-                    <label for="username">Username:</label>
-                    <input type="text " class="form-control form-control-sm " id="username-school " placeholder="please fill in username " required />
-                </div>
-
-                <div class="form-group ">
-                    <label for="password ">Password:</label>
-                    <input type="password " class="form-control form-control-sm " id="password-school " placeholder="please fill in password " required />
-                </div>
-
-                <div class="form-group ">
-                    <label for="email ">Email:</label>
-                    <input type="email " class="form-control form-control-sm " id=" email-school " placeholder="please fill in email " required />
-                </div>
-
-                <div class="form-group ">
-                    <label for="name ">Name:</label>
-                    <input type="text " class="form-control form-control-sm " id=" name-school " placeholder="please fill in full name " required />
-                </div>
-
-                <div class="form-group ">
-                    <label for="subject ">Subject:</label>
-                    <input type="text " class="form-control form-control-sm " id=" subject-school " placeholder="please fill in subject " required />
-                </div>
-
-                <div class="form-group">
-                    <button class="btn btn-success" type="button" id="signup-school">Signup</button>
-                </div>
+            <div class="form-group ">
+              <label for="name ">Name:</label>
+              <input
+                type="text "
+                class="form-control form-control-sm "
+                id=" name-school"
+                name="name"
+                placeholder="please fill in full name "
+                required
+              />
             </div>
+
+            <div class="form-group ">
+              <label for="subject ">Subject:</label>
+              <input
+                type="text "
+                class="form-control form-control-sm "
+                id=" subject-school "
+                placeholder="please fill in subject "
+                required
+              />
+            </div>
+            <div class="form-group">
+                    <label for="image">Image Link:</label>
+                    <input
+                      type="url"
+                      class="form-control form-control-sm"
+                      id="subject-school"
+                      name="image-link"
+                      placeholder="please fill in subject"
+                      required
+                    />
+                  </div>
+
+            <div class="form-group">
+              <button class="btn btn-success" type="button" id="signup-school">
+                Signup
+              </button>
+            </div>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <section class="footer bg-light">
-            <footer class="footerSection py-5">
-                    <div class="social">
-                        <ul class="socialMedia">
-                            <li>
-                                <a href="https://www.facebook.com/" target="_blank">
-                                    <i class="icon-facebook">Facebook</i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://twitter.com/" target="_blank">
-                                    <i class="icon-twitter">Twitter</i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.instagram.com/freecodecamplisbon/" target="_blank">
-                                    <i class="icon-instagram">Instagram</i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="copy">copyright: nulpointers gang imc.</div>
-                </footer>
-
-    </section>
+      <section class="footer bg-light">
+        <footer class="footerSection py-5">
+          <div class="social">
+            <ul class="socialMedia">
+              <li>
+                <a href="https://www.facebook.com/" target="_blank">
+                  <i class="icon-facebook">Facebook</i>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/" target="_blank">
+                  <i class="icon-twitter">Twitter</i>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/freecodecamplisbon/"
+                  target="_blank"
+                >
+                  <i class="icon-instagram">Instagram</i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="copy">copyright: nulpointers gang imc.</div>
+        </footer>
+      </section>
     </div>
-</body>
-
+  </body>
 </html>

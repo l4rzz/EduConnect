@@ -1,30 +1,31 @@
-// perform an ajax http post request
-$(document).ready(function() {
-    $("#signup-teacher").click(function() {
+$( document ).ready(function() {
+    
+    $('#submit-teacher').click( function(event){
+
         var usernameTeacher = $("#username-teacher").val();
         var passwordTeacher = $("#password-teacher").val();
-        var emailadressTeacher = $("#email-teacher").val();
-        var fullnameTeacher = $("#name-teacher").val();
+        var emailTeacher = $("#email-teacher").val();
+        var nameTeacher = $("#name-teacher").val();
+        var imageLinkTeacher = $("#imageLink-teacher").val();
         var subjectTeacher = $("#subject-teacher").val();
 
         $.ajax({
-            url: 'http://localhost:8080/api/user',
+            url: 'http://localhost:8080/teamnull/api/teacher/add',
             type: 'POST',
             data: JSON.stringify({
-                username: usernameTeacher,
-                password: passwordTeacher,
-                email: emailadressTeacher,
-                name: fullnameTeacher,
+                email: emailTeacher,
+                imageLink: imageLinkTeacher,
+                name: nameTeacher,
                 subject: subjectTeacher
             }),
             async: true,
-            contentType: 'application/json',
-            success: successCallback,
-            error: errorCallback,
-
-        });
+            contentType: 'application/json'
+        })
     });
+});
+    
 
+    /*
     $("#signup-school").click(function() {
         var usernameSchool = $("#username-school").val();
         var passwordSchool = $("#password-school").val();
@@ -33,7 +34,7 @@ $(document).ready(function() {
         var subjectSchool = $("#subject-school").val();
 
         $.ajax({
-            url: 'http://localhost:8080/api/user',
+            url: 'http://localhost:8080/teamnull/api/school',
             type: 'POST',
             data: JSON.stringify({
                 username: usernameSchool,
@@ -49,4 +50,6 @@ $(document).ready(function() {
 
         });
     });
+   
 });
+ */
