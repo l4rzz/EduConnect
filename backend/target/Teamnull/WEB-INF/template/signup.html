@@ -47,7 +47,7 @@
           </ul>
 
           <div id="signup-teacher">
-            <form id="form" method="post">
+            <form id="form" action="http://localhost:8080/teamnull/api/teacher" method="post">
               <h2 class="h2">Signup AS Teacher</h2>
               
               <div class="form-group ">
@@ -106,8 +106,6 @@
           <div id="signup-school">
             <h2 class="h2">Signup As School</h2>
 
-
-            <form id="form" method="post">
             <div class="form-group ">
               <label for="email ">Email:</label>
               <input
@@ -146,17 +144,18 @@
                     <input
                       type="url"
                       class="form-control form-control-sm"
-                      id="imageLink-school"
+                      id="subject-school"
                       name="image-link"
-                      placeholder="please fill in image link"
+                      placeholder="please fill in subject"
                       required
                     />
                   </div>
 
             <div class="form-group">
-                    <input id="submit-school" type="button" name="submit" value="submit"/>
+              <button class="btn btn-success" type="button" id="signup-school">
+                Signup
+              </button>
             </div>
-        </form>
           </div>
         </div>
       </section>

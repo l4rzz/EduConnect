@@ -1,0 +1,58 @@
+:root {
+    --main-bg-color: #151965;
+    --secondary-bg-color: #151965;
+    --tertiary-bg-color: #515585;
+    --extra-bg-color: #46b5d1;
+  }
+  *{
+      color: azure;
+  }
+  
+body{
+    margin: 0 200px;
+    background-color: var(--main-bg-color);
+}
+.nav{
+    height: 5vh;
+
+}
+.logo{
+    color: var(--main-bg-color);
+}
+.jumbotron{
+    background-color: var(--tertiary-bg-color);
+    height: 60vh;
+}
+.buttons{
+    border-left: 2px solid white;
+    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.banner{
+    height: 30vh;
+}
+.banner img{
+    max-height: 25vh;
+}
+.about-us{
+  height: 95vh;
+  background-color: var(--tertiary-bg-color);
+  display: flex;
+  justify-content: space-around;
+}
+.about-div{
+    margin: 100px 200px;
+}
+.footer *{
+    color: var(--main-bg-color);
+
+}
+.footerSection{
+    display: flex;
+    justify-content: space-around;
+}
+#login{
+    margin-top: 20px;
+}
