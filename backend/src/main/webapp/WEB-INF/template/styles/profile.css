@@ -1,6 +1,13 @@
 .content {
     width: 80%;
-    margin: 0 auto;
+    height: 100vh;
+    margin: 2% auto;
+    overflow: hidden;
+}
+
+#bio {
+    height: 90vh;
+    width: 80%;
 }
 
 .profile-picture {
