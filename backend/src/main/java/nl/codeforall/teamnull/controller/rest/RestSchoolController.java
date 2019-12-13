@@ -67,7 +67,8 @@ public class RestSchoolController {
     }
 
     @PostMapping(
-            value = "/add"
+            value = "/add",
+            produces = MediaType.APPLICATION_JSON_VALUE
     )
     public ResponseEntity<?> addSchool(@RequestBody SchoolDto schoolDto, UriComponentsBuilder uriComponentsBuilder) {
 
@@ -80,6 +81,11 @@ public class RestSchoolController {
 
         return new ResponseEntity<>(headers, HttpStatus.OK);
     }
+
+    @GetMapping(
+            value = "{/id}/match}",
+            produces = MediaType.
+    )
 
 
 }
