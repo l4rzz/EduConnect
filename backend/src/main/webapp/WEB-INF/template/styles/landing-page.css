@@ -52,7 +52,17 @@ body{
 .footerSection{
     display: flex;
     justify-content: space-around;
+    align-self: center;
 }
 #login{
     margin-top: 20px;
+}
+.icons{
+    height: 40px;
+}
+.socialMedia{
+    list-style: none;
+}
+.copy{
+    align-self: center;
 }
