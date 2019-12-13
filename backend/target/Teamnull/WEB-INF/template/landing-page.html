@@ -1,3 +1,4 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 
 <head>
@@ -6,8 +7,8 @@
     <title>Landing Page</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/landing-page.css">
+    <link rel="stylesheet" href="<c:url value='/template/styles/bootstrap.min.css' />">
+    <link rel="stylesheet" href="<c:url value='/template/styles/landing-page.css' />">
 </head>
 
 <body>
@@ -46,7 +47,7 @@
                                     <div class="form-group ">
                                         <label for="password">Password: </label>
                                         <input type="password " class="form-control form-control-sm " id="password" placeholder="please fill in password " />
-                                        <button class="btn btn-success" type="button" >Login</button>
+                                        <button class="btn btn-success" type="button">Login</button>
                                     </div>
                                 </div>
                             </div>
