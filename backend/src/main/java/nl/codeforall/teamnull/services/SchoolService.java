@@ -46,7 +46,17 @@ public class SchoolService extends AbstractService implements GenericService<Sch
                 availableTeachers.add(teacher);
             }
         }
-
         return availableTeachers;
+    }
+
+    @Transactional
+    @Override
+    public boolean compareEmail(String email) {
+        for (School school : schoolDao.findAll()) {
+            if (email.equals(school.getEmail())) {
+                return true;
+            }
+        }
+        return false;
     }
 }

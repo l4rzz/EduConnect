@@ -106,4 +106,22 @@ public class RestTeacherController {
         }
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
+
+    @GetMapping(
+            value = "/compare/{email}",
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public ResponseEntity<?> compareEmails(@PathVariable String email, UriComponentsBuilder uriComponentsBuilder) {
+        for (int i = 0; i < teacherService.list().size(); i++) {
+            if (teacherService.compareEmail(email)) {
+
+                UriComponents uriComponents = uriComponentsBuilder.path("teacher/" + (i + 1)).build();
+                HttpHeaders headers = new HttpHeaders();
+                headers.setLocation(uriComponents.toUri());
+
+                return new ResponseEntity<>(headers, HttpStatus.OK);
+            }
+        }
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
 }
