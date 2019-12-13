@@ -1,6 +1,6 @@
 $( document ).ready(function() {
     
-    $('#submit').click( function(event){
+    $('#submit-teacher').click( function(event){
 
         var usernameTeacher = $("#username-teacher").val();
         var passwordTeacher = $("#password-teacher").val();
@@ -10,7 +10,7 @@ $( document ).ready(function() {
         var subjectTeacher = $("#subject-teacher").val();
 
         $.ajax({
-            url: 'http://localhost:8080/teamnull/api/teacher',
+            url: 'http://localhost:8080/teamnull/api/teacher/add',
             type: 'POST',
             data: JSON.stringify({
                 email: emailTeacher,
