@@ -27,6 +27,7 @@ public class SchoolService extends AbstractService implements GenericService<Sch
         return schoolDao.findAll();
     }
 
+    @Transactional
     @Override
     public School get(Integer id) {
         return schoolDao.findById(id);
