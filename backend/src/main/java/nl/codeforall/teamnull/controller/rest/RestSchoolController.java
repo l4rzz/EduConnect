@@ -114,21 +114,4 @@ public class RestSchoolController {
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 
-    @GetMapping(
-            value = "/compare/{email}",
-            produces = MediaType.APPLICATION_JSON_VALUE
-    )
-    public ResponseEntity<?> compareEmails(@PathVariable String email, UriComponentsBuilder uriComponentsBuilder) {
-        for (int i = 0; i < service.list().size(); i++) {
-            if (service.compareEmail(email)) {
-
-                UriComponents uriComponents = uriComponentsBuilder.path("school/" + (i + 1)).build();
-                HttpHeaders headers = new HttpHeaders();
-                headers.setLocation(uriComponents.toUri());
-
-                return new ResponseEntity<>(headers, HttpStatus.OK);
-            }
-        }
-        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-    }
 }

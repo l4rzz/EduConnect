@@ -16,5 +16,4 @@ public interface GenericService<T extends Model, S extends Model> {
 
     List<S> match(Integer id);
 
-    boolean compareEmail(String email);
 }
