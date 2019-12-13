@@ -36,3 +36,11 @@ body{
     display: flex;
     justify-content: space-around;
 }
+.show-profile{
+    margin-top: 20px;
+    float: right;
+    
+}
+.show-profile a{
+    color: aliceblue;
+}

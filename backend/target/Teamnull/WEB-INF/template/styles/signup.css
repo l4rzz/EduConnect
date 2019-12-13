@@ -36,3 +36,12 @@ body{
 .home{
     float: right;
 }
+.icons{
+    height: 40px;
+}
+.socialMedia{
+    list-style: none;
+}
+.copy{
+    align-self: center;
+}
