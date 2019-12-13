@@ -4,8 +4,6 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @MappedSuperclass
@@ -24,16 +22,10 @@ public abstract class Model {
     @UpdateTimestamp
     private Date updateTime;
 
-    @NotNull
-    @NotBlank
     private String name;
 
-    @NotNull
-    @NotBlank
     private String email;
 
-    @NotNull
-    @NotBlank
     private String imageLink;
 
     public int getId() {
