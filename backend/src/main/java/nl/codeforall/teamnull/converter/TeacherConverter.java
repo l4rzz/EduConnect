@@ -31,6 +31,8 @@ public class TeacherConverter {
         teacher.setStartDate(teacherDto.getStartDate());
         teacher.setEndDate(teacherDto.getEndDate());
 
+        return teacher;
+
     }
 
     public TeacherDto teacherToDto(Teacher teacher){
@@ -47,5 +49,6 @@ public class TeacherConverter {
         teacherDto.setStartDate(teacher.getStartDate());
         teacherDto.setEndDate(teacher.getEndDate());
 
+        return teacherDto;
     }
 }
