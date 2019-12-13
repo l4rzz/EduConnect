@@ -1,0 +1,38 @@
+:root {
+    --main-bg-color: #151965;
+    --secondary-bg-color: #151965;
+    --tertiary-bg-color: #515585;
+    --extra-bg-color: #46b5d1;
+  }
+  *{
+      color: azure;
+  }
+body{
+    margin: 0 5vh;
+    background-color: var(--main-bg-color);
+}
+.dashboard{
+    min-height: 90vh;
+    margin-top: 100px;
+}
+.dashboard-div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.dashboard-profile-image{
+    border-radius: 50%;
+
+}
+.dashboard-wall{
+    margin-left: 5vw;
+    border-bottom: 1px solid gainsboro;
+}
+.footer *{
+   color: var(--main-bg-color);
+   
+}
+.footerSection{
+    display: flex;
+    justify-content: space-around;
+}
