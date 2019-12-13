@@ -1,19 +1,22 @@
 package nl.codeforall.teamnull.converter;
 
 import nl.codeforall.teamnull.command.TeacherDto;
+import nl.codeforall.teamnull.persistence.model.School;
 import nl.codeforall.teamnull.persistence.model.Teacher;
 import nl.codeforall.teamnull.services.GenericService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class TeacherConverter {
 
-    private GenericService<Teacher> teacherService;
+    private GenericService<Teacher, School> teacherService;
 
 
     @Autowired
-    public void setTeacherService(GenericService<Teacher> teacherService) {
+    @Qualifier("teacherService")
+    public void setTeacherService(GenericService<Teacher, School> teacherService) {
         this.teacherService = teacherService;
     }
 

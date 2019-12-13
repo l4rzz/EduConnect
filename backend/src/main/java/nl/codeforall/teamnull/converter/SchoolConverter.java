@@ -2,6 +2,7 @@ package nl.codeforall.teamnull.converter;
 
 import nl.codeforall.teamnull.command.SchoolDto;
 import nl.codeforall.teamnull.persistence.model.School;
+import nl.codeforall.teamnull.persistence.model.Teacher;
 import nl.codeforall.teamnull.services.GenericService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -9,10 +10,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class SchoolConverter {
 
-    private GenericService<School> service;
+    private GenericService<School, Teacher> service;
 
     @Autowired
-    public void setService(GenericService<School> service) {
+    public void setService(GenericService<School, Teacher> service) {
         this.service = service;
     }
 

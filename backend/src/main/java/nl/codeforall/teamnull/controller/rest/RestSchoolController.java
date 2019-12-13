@@ -4,6 +4,7 @@ package nl.codeforall.teamnull.controller.rest;
 import nl.codeforall.teamnull.command.SchoolDto;
 import nl.codeforall.teamnull.converter.SchoolConverter;
 import nl.codeforall.teamnull.persistence.model.School;
+import nl.codeforall.teamnull.persistence.model.Teacher;
 import nl.codeforall.teamnull.services.GenericService;
 import nl.codeforall.teamnull.services.SchoolService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,13 +26,13 @@ import java.util.List;
 @RequestMapping("/api/school")
 public class RestSchoolController {
 
-    private GenericService<School> service;
+    private GenericService<School, Teacher> service;
 
     private SchoolConverter converter;
 
     @Autowired
     @Qualifier("schoolService")
-    public void setService(GenericService<School> service) {
+    public void setService(GenericService<School, Teacher> service) {
         this.service = service;
     }
 

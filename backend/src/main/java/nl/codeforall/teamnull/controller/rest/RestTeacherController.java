@@ -21,18 +21,18 @@ import java.util.List;
 @RequestMapping("/api/teacher")
 public class RestTeacherController {
 
-    private GenericService<Teacher> teacherService;
-    private GenericService<School> schoolService;
+    private GenericService<Teacher, School> teacherService;
+    private GenericService<School, Teacher> schoolService;
 
     @Autowired
     @Qualifier("schoolService")
-    public void setSchoolService(GenericService<School> schoolService) {
+    public void setSchoolService(GenericService<School, Teacher> schoolService) {
         this.schoolService = schoolService;
     }
 
     @Autowired
     @Qualifier("teacherService")
-    public void setTeacherService(GenericService<Teacher> teacherService) {
+    public void setTeacherService(GenericService<Teacher, School> teacherService) {
         this.teacherService = teacherService;
     }
 
