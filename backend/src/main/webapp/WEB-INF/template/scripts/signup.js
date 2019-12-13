@@ -1,30 +1,55 @@
 // perform an ajax http post request
+/*
 $(document).ready(function() {
     $("#signup-teacher").click(function() {
-        var usernameTeacher = $("#username-teacher").val();
-        var passwordTeacher = $("#password-teacher").val();
-        var emailadressTeacher = $("#email-teacher").val();
-        var fullnameTeacher = $("#name-teacher").val();
-        var subjectTeacher = $("#subject-teacher").val();
+        event.preventDefault;
 
         $.ajax({
-            url: 'http://localhost:8080/api/user',
+            url: 'http://localhost:8080/teamnull/api/teacher',
             type: 'POST',
-            data: JSON.stringify({
-                username: usernameTeacher,
-                password: passwordTeacher,
-                email: emailadressTeacher,
-                name: fullnameTeacher,
-                subject: subjectTeacher
-            }),
+            data: $("#form").serialize(),
             async: true,
             contentType: 'application/json',
-            success: successCallback,
-            error: errorCallback,
+            success: function (result) {
+                console.log(result)
+            }
 
         });
     });
+    
 
+   function f(form, name, email) {
+    att = form.action; // Use form.action
+    $.post(att, {
+        name: name.value, // Use fname.value
+        email: email.value,
+         // Use lname.value
+    }).done(function (data) {
+        alert(data);
+    });
+    return true;
+}
+*/
+
+// perform an ajax http post request
+
+$('#submit').click( function(event){
+
+$.ajax({
+    url: 'http://localhost:8080/api/user',
+    type: 'POST',
+    data: JSON.stringify({
+        email: 'rui.ferrao@academiadecodigo.org',
+        imageLink: 'master',
+        name: 'ferrao'
+    }),
+    async: true,
+    contentType: 'application/json'
+})
+});
+    
+
+    /*
     $("#signup-school").click(function() {
         var usernameSchool = $("#username-school").val();
         var passwordSchool = $("#password-school").val();
@@ -33,7 +58,7 @@ $(document).ready(function() {
         var subjectSchool = $("#subject-school").val();
 
         $.ajax({
-            url: 'http://localhost:8080/api/user',
+            url: 'http://localhost:8080/teamnull/api/school',
             type: 'POST',
             data: JSON.stringify({
                 username: usernameSchool,
@@ -49,4 +74,6 @@ $(document).ready(function() {
 
         });
     });
+   
 });
+ */
