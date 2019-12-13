@@ -10,7 +10,7 @@ $( document ).ready(function() {
         var subjectTeacher = $("#subject-teacher").val();
 
         $.ajax({
-            url: 'http://localhost:8080/teamnull/api/teacher/add',
+            url: 'http://localhost:8080/teamnull/api/teacher',
             type: 'POST',
             data: JSON.stringify({
                 email: emailTeacher,
