@@ -72,7 +72,7 @@ public class RestSchoolController {
 
         School savedSchool = service.save(converter.dtoToSchool(schoolDto));
 
-        UriComponents uriComponents = UriComponentsBuilder.fromPath("/api/school/" + savedSchool.getId()).build();
+        UriComponents uriComponents = uriComponentsBuilder.path("/api/school/" + savedSchool.getId()).build();
 
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(uriComponents.toUri());
