@@ -33,3 +33,6 @@ body{
 #login{
     margin-top: 20px;
 }
+.home{
+    float: right;
+}
