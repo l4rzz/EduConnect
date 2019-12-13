@@ -11,4 +11,6 @@ public interface GenericService<T extends Model> {
     void delete(Integer id);
 
     List<T> list();
+
+    T get(Integer id);
 }
