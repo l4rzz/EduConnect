@@ -45,9 +45,8 @@ public class RestSchoolController {
     )
     public ResponseEntity<List<SchoolDto>> listSchools() {
 
-        List<School> schools = service.list();
         List<SchoolDto> schoolDtos = new LinkedList<>();
-        for (School school : schools) {
+        for (School school : service.list()) {
             schoolDtos.add(converter.schoolToDto(school));
         }
 
@@ -60,7 +59,7 @@ public class RestSchoolController {
     )
     public ResponseEntity<SchoolDto> listSchool(@PathVariable Integer id) {
 
-        School school = service.list().get(id - 1);
+        School school = service.list().get(id);
 
         return new ResponseEntity<>(converter.schoolToDto(school), HttpStatus.OK);
     }
@@ -112,6 +111,4 @@ public class RestSchoolController {
         }
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
-
-
 }

@@ -1,5 +1,6 @@
 package nl.codeforall.teamnull.controller.rest;
 
+import nl.codeforall.teamnull.command.SchoolDto;
 import nl.codeforall.teamnull.command.TeacherDto;
 import nl.codeforall.teamnull.converter.TeacherConverter;
 import nl.codeforall.teamnull.persistence.model.School;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import java.util.LinkedList;
 import java.util.List;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -38,19 +40,31 @@ public class RestTeacherController {
     }
 
     @GetMapping(path = {"/", ""})
-    public List<Teacher> listTeachers() {
-        List<Teacher> result = teacherService.list();
+    public ResponseEntity<List<TeacherDto>> listTeachers() {
+        List<TeacherDto> teacherDtos = new LinkedList<>();
+        for (Teacher teacher : teacherService.list()) {
+            teacherDtos.add(converter.teacherToDto(teacher));
+        }
 
-        return result;
+        return new ResponseEntity<>(teacherDtos, HttpStatus.OK);
+    }
+
+    @GetMapping(path = "/{id}")
+    public ResponseEntity<TeacherDto> listTeacher (@PathVariable Integer id) {
+
+        Teacher teacher = teacherService.list().get(id);
+
+        return new ResponseEntity<>(converter.teacherToDto(teacher), HttpStatus.OK);
+
     }
 
     @PostMapping(
             path = "/add",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<?> addTeacher(@RequestBody Teacher teacher, UriComponentsBuilder uriComponentsBuilder) {
+    public ResponseEntity<?> addTeacher(@RequestBody TeacherDto teacherDto, UriComponentsBuilder uriComponentsBuilder) {
 
-        Teacher savedTeacher = teacherService.save(teacher);
+        Teacher savedTeacher = teacherService.save(converter.dtoToTeacher(teacherDto));
 
         UriComponents uriComponents = uriComponentsBuilder.path("/api/teacher/" + savedTeacher.getId()).build();
 
