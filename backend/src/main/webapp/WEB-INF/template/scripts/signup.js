@@ -1,51 +1,27 @@
-// perform an ajax http post request
-/*
-$(document).ready(function() {
-    $("#signup-teacher").click(function() {
-        event.preventDefault;
+$( document ).ready(function() {
+    
+    $('#submit').click( function(event){
+
+        var usernameTeacher = $("#username-teacher").val();
+        var passwordTeacher = $("#password-teacher").val();
+        var emailTeacher = $("#email-teacher").val();
+        var nameTeacher = $("#name-teacher").val();
+        var imageLinkTeacher = $("#imageLink-teacher").val();
+        var subjectTeacher = $("#subject-teacher").val();
 
         $.ajax({
             url: 'http://localhost:8080/teamnull/api/teacher',
             type: 'POST',
-            data: $("#form").serialize(),
+            data: JSON.stringify({
+                email: emailTeacher,
+                imageLink: imageLinkTeacher,
+                name: nameTeacher,
+                subject: subjectTeacher
+            }),
             async: true,
-            contentType: 'application/json',
-            success: function (result) {
-                console.log(result)
-            }
-
-        });
+            contentType: 'application/json'
+        })
     });
-    
-
-   function f(form, name, email) {
-    att = form.action; // Use form.action
-    $.post(att, {
-        name: name.value, // Use fname.value
-        email: email.value,
-         // Use lname.value
-    }).done(function (data) {
-        alert(data);
-    });
-    return true;
-}
-*/
-
-// perform an ajax http post request
-
-$('#submit').click( function(event){
-
-$.ajax({
-    url: 'http://localhost:8080/api/user',
-    type: 'POST',
-    data: JSON.stringify({
-        email: 'rui.ferrao@academiadecodigo.org',
-        imageLink: 'master',
-        name: 'ferrao'
-    }),
-    async: true,
-    contentType: 'application/json'
-})
 });
     
 
