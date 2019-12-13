@@ -14,10 +14,13 @@ body{
 .dashboard{
     min-height: 90vh;
     margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 }
 .dashboard-div{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .dashboard-profile-image{
