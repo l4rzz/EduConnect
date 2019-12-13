@@ -104,10 +104,12 @@ public class RestSchoolController {
             value = "/{id}/update",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<?> updateSchool(@PathVariable Integer id, SchoolDto schoolDto) {
+    public ResponseEntity<?> updateSchool(@PathVariable Integer id, @RequestBody SchoolDto schoolDto) {
+        schoolDto.setId(id);
         if (schoolDto.getId().equals(id)) {
-            service.save(converter.dtoToSchool(schoolDto));
-            return new ResponseEntity<>(HttpStatus.OK);
+            School school = converter.dtoToSchool(schoolDto);
+            service.save(school);
+            return new ResponseEntity<>(school, HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }

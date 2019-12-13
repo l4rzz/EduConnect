@@ -50,7 +50,7 @@ public class RestTeacherController {
     }
 
     @GetMapping(path = "/{id}")
-    public ResponseEntity<TeacherDto> listTeacher (@PathVariable Integer id) {
+    public ResponseEntity<TeacherDto> listTeacher(@PathVariable Integer id) {
 
         Teacher teacher = teacherService.list().get(id);
 
@@ -97,10 +97,12 @@ public class RestTeacherController {
             path = "/{id}/update",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<?> updateTeacher (@PathVariable Integer id, TeacherDto teacherDto) {
+    public ResponseEntity<?> updateTeacher(@PathVariable Integer id, @RequestBody TeacherDto teacherDto) {
+        teacherDto.setId(id);
         if (teacherDto.getId().equals(id)) {
-            teacherService.save(converter.dtoToTeacher(teacherDto));
-            return new ResponseEntity<>(HttpStatus.OK);
+            Teacher teacher = converter.dtoToTeacher(teacherDto);
+            teacherService.save(teacher);
+            return new ResponseEntity<>(teacher, HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
