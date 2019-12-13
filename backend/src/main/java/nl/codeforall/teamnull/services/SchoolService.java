@@ -35,7 +35,7 @@ public class SchoolService extends AbstractService implements GenericService<Sch
         return schoolDao.findById(id);
     }
 
-
+    @Transactional
     @Override
     public List<Teacher> match(Integer id) {
 
