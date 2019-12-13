@@ -2,6 +2,7 @@ package nl.codeforall.teamnull.persistence.dao.jpa;
 
 import nl.codeforall.teamnull.persistence.dao.Dao;
 import nl.codeforall.teamnull.persistence.model.Model;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

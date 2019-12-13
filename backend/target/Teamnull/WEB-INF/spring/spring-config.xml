@@ -10,4 +10,6 @@
     <mvc:annotation-driven />
     <mvc:default-servlet-handler/>
 
+    <import resource="persistence.xml"/>
+
 </beans>

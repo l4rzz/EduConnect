@@ -1,9 +1,13 @@
 package nl.codeforall.teamnull.persistence.model;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+import org.hibernate.annotations.FetchProfile;
+
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 
 @Entity
@@ -13,14 +17,22 @@ public class School extends Model {
 
     private String city;
     private String country;
-    private List<String> subjects;
+
+    @Column
+    @ElementCollection(
+            targetClass = String.class,
+            fetch = FetchType.EAGER
+    )
+    @Fetch(value = FetchMode.SELECT)
+    private List<String> subjects = new LinkedList<>();
 
     @OneToMany(
             cascade = CascadeType.ALL,
-            mappedBy = "schools",
+            mappedBy = "school",
             fetch = FetchType.EAGER
     )
-    private List<Teacher> teachers;
+    @Fetch(FetchMode.SELECT)
+    private List<Teacher> teachers = new ArrayList<>();
 
     private Date startDate;
     private Date endDate;
